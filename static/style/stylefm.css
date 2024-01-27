@@ -1,0 +1,257 @@
+/* FOOD MASTER */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(/static/images/hotel.jpg) no-repeat ;height:950px;
+  font-family: 'Times New Roman', Times, serif;
+ 
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+h1 {
+  margin-top: 50px;
+  color: tomato;
+  font-size: 60px;
+
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+  border-color: #fff;
+}
+
+table input {
+  height: 30px;
+  border-radius: 10px;
+  font-weight: bolder;
+  padding: 10px;
+  text-transform: uppercase;
+
+}
+
+table th {
+  background-color: burlywood;
+
+}
+
+input[type=submit]:hover {
+  background-color: burlywood;
+  border: none;
+  border-radius: 10px;
+}
+
+input[type=reset]:hover {
+  background-color: burlywood;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: #ffe6a7;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.date {
+  position: absolute;
+  top: 6%;
+  right: 5%;
+  background-color: burlywood;
+  height: 150px;
+  width: 11%;
+  padding: 10px;
+  border-radius: 10px;
+
+
+}
+
+.dt {
+  padding: 6px;
+  overflow: hidden;
+
+}
+
+.date:hover {
+  box-shadow: 5px 10px;
+
+}
+
+.entry {
+  text-decoration: underline;
+}
+
+.dt tr,
+td {
+  border: solid 2px white;
+}
+
+.dt {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+
+td:nth-child(1) {
+  color: #fff;
+}
+
+
+@media screen and (max-width: 760px) {
+  
+  
+  .Without_Responsive{
+    display: none;
+  }
+  .Responsive_table{
+    display: block;
+  }
+  
+
+  .tableFixHead {
+    overflow-y: auto; 
+    height: auto; 
+  }
+  .tableFixHead tr td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    border: solid 2px  #bd692d;
+    background-color:#f7c469;
+    color : rgb(87, 57, 18);
+    z-index: 1;
+    
+  }
+  .tableFixHead table {
+    border-collapse: separate; 
+    border-spacing: 0;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+
+
+  .Responsive_table h1{
+    margin-top: 150px;
+  }
+  .Responsive_table tr:nth-child(1) td {
+       text-align: center;
+       background-color:#f7c469;
+       color : rgb(87, 57, 18);
+  }
+  table , tr ,td{
+    border: solid 2px  #bd692d;
+  }
+  input{
+    height: 35px;
+    width: 100px;
+  }
+  .header2{
+    padding-top:10px;
+      font-size:40px;
+       color:#fff;
+     margin-top: 20px;
+     margin-bottom: 0;
+
+}
+  .d2{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .d2 td:nth-child(1)
+{
+       font-size: 15px;
+       background-color:#f7c469;
+       color : rgb(87, 57, 18);
+       padding: 10px;
+       font-weight:bolder;
+   
+}
+.d2 td:nth-child(2) input{
+  width: 100px;
+
+}
+.Responsive_table input  {
+  width: 100px !important;
+}
+
+  
+
+}
