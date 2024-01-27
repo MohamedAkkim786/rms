@@ -1,0 +1,216 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workers application form</title>
+    <script>
+        function application(){
+            var hname=document.getElementById("hname").value;
+            var mobile_no=document.getElementById("mobile_no").value;
+            var email=document.getElementById("email").value;
+            var cname=document.getElementById("cname").value;       
+            var cmobile_no=document.getElementById("cmobile_no").value;
+            var account_no=document.getElementById("CCaccount_noA").value;
+        }
+    </script>
+</head>
+<body>
+<style>
+        body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        color: white;
+        
+      }
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+        .btn{
+            border-radius: 5px;
+            border:none;
+            width: 100px;
+            height: 30px;
+            margin-top: 20px;
+            background-color: rgb(227, 210, 81);
+        }
+        .hname{
+            border-radius: 5px;
+            border: 2px solid black;
+            width: 50%;
+            height: 27px;
+        }
+
+    </style>
+    <h3 align="center">HOTEL APPLICATION FORM</h3>
+    <form>
+        <table align="center">
+            <tbody>
+            <tr>
+                <td>
+                    <label>HOTEL NAME :</label>
+                </td>
+                <td>
+                    <input type="name" name="hname" id="hname" class="hname" placeholder="Hotel name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>HOTEL ADDRESS :</label>
+                </td>
+                <td>
+                    <textarea class="address" name="haddress" id="haddress" class="hname" cols="10" rows="5" required>
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>MOBILE NO :</label>
+                </td>
+                <td>
+                    <input type="number" name="mobile_no" id="mobile_no"  class="hname" placeholder="Enter Mobile No" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label> EMAIL :</label>
+                </td>
+                <td>
+                    <input type="email" name="email" id="email" class="hname" placeholder="Enter email" required>
+                </td
+            </tr><h4 align="center">CANDIDATE DETAILS</h4>
+            <tr>
+                <td>
+                    <label>NAME OF THE CANDIDATE :</label>
+                </td>
+                <td>
+                    <input type="name" name="cname" id="cname" class="hname" placeholder="name of the candidate" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>POSITION APPLIED FOR :</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="waiter"><span>waiter</span>
+                    <input type="checkbox" name="manager"><span>manager</span>
+                    <input type="checkbox" name="cashier"><span>cashier</span>
+                    <input type="checkbox" name="house keeping"><span>house keeping</span>
+                    <input type="checkbox" name="cook"><span>cook</span>
+                    <input type="checkbox" name="server"><span>server</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>CANDIDATE ADDRESS:</label>
+                </td>
+                <td>
+                <textarea class="address" name="address" class="hname" cols="10" rows="5" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>CANDIDATE MOBILE NO:</label>
+                </td>
+                <td>
+                    <input type="number" name="cmobile_no" id="cmobile_no" class="hname" placeholder="candidate mobile no" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>CANDIDATE EMAIL</label>
+                </td>
+                <td>
+                    <input type="email" name="cemail" class="hname" placeholder="candidate email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>ACCOUNT NO:</label>
+                </td>
+                <td>
+                    <input type="number" name="account_no" id="account_no" class="hname" placeholder="account no" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>EXPERIENCE</label>
+                </td>
+                <td>
+                    <input type="number" name="exp" class="hname" required>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <br>
+    <br>
+    <br>
+    <center>
+    <a href="#"></a>
+    <input class="btn" type="button" value="submit" onclick="application();" >
+    <input class="btn" type="reset" value="reset">
+    </center>
+</body>
+</html>

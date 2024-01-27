@@ -1,0 +1,412 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOTELBOOKING</title>
+    <link rel="icon" href="/hotel.jpg">
+    <style>
+      body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        
+      }
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+} 
+table{
+  margin-left: 20%;
+}
+.table{
+margin-top: 50px;
+margin-left: 30%;
+margin-right: 30%;
+
+
+}
+
+
+.col-2 {
+float: left;
+width: 50%;
+margin-top: 6px;
+text-align: left;
+color:rgb(255, 255, 255);
+font-family: 'Times New Roman', Times, serif;
+}
+
+.col-3 {
+float: left;
+width: 50%;
+margin-top: 6px;
+
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+input {
+width: 100%;
+padding: 5px;
+border-radius: 10px;
+border: none;
+}
+
+.row{
+margin: 2px;
+}
+.btn{
+background-color:#ffe6a7;
+border: none;
+border-radius: 5px;
+width: 100px;
+height: 30px;
+margin-right: 20px;
+}
+.btn{
+margin-top: 15px;
+}
+input[type=submit]:hover {
+background-color: burlywood;
+border: none;
+border-radius: 10px;
+}
+input[type=reset]:hover {
+background-color: burlywood;
+border: none;
+border-radius: 10px;
+}
+h1{
+  color: rgb(255, 181, 71);
+  margin-top: 5%;
+  font-family: 'Times New Roman', Times, serif;
+}
+select{
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+textarea{
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+
+.table {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+input {
+  width: 100%
+}
+
+.col-2 {
+  float: left;
+  width: 65%;
+  margin-top: 6px;
+}
+
+.col-3 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+}
+.b1{
+  margin-left:15px;
+  
+}
+.c1{
+  margin-left: 30px;
+}
+.n1{
+  margin-left:30px;
+}
+.n3{
+  margin-left:0px;
+}
+.a2{
+  margin-left: 20px;
+  margin-top: 3px;
+}
+.a3{
+  margin-left: 21px;
+  margin-top: 3px;
+}
+}
+.n1{
+  width: 30px;
+}
+.a1{
+  width:30px
+}
+.a2{
+  width:30px
+}
+.a3{
+  width:30px
+}
+span{
+  color: #ffff;
+  font-family: 'Times New Roman', Times, serif;
+}
+.b1{
+  width: 30px;
+}
+.c1{
+  width: 30px;
+}
+.n3{
+  width: 30px;
+}
+
+ </style>
+ <script>
+  function calculatedays(){
+    var d1=document.getElementById("dateofbooking").value;
+    var d2=document.getElementById("dateofvacate").value;
+    const dateOne=new Date(d1);
+    const dateTwo=new Date(d2);
+    const time=Math.abs(dateTwo-dateOne);
+    console.log(time)
+    const days=Math.ceil(time/(1000*60*60*24));
+    console.log(days)
+    document.getElementById("totaldays").value=days;
+    document.getElementById("total").value=days*2000;
+}
+
+
+   function gst() {
+    var arr =Number(document.getElementById("total").value);
+    var gst=document.getElementById("gstvalue").value;
+   if (gst == 10){
+      var tot = arr + arr*10/100;
+   }
+   else if(gst == 15){
+      var tot = arr + arr*15/100;
+   }
+   else if(gst == 20){
+      var tot = arr + arr*20/100;
+   }
+   else{
+      document.getElementById('gstvalue').value = 0;
+   }
+   document.getElementById('nettotal').value = tot;
+ }
+ </script>
+  </head>
+  <body>
+ 
+<form method="POST" action="#">
+  {% csrf_token %}
+  <center>
+    <h1>HOTEL BOOKING FORM</h1>
+    <form>
+      <div class="table" style="font-weight:bolder;">
+        
+        <div class="row">
+          <div class="col-2" >
+            NAME OF THE CUSTOMER:
+          </div>
+          <div class="col-3" >
+            <input type="text" name="customername"  id="customername"  class="cname" placeholder="" required/>
+          </div>
+        
+        </div>
+        <div class="row">
+          <div class="col-2">
+            DATE OF BIRTH:
+          </div>
+          <div class="col-3">
+            <input type="date" name="dob"  id="dob"  required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            AGE:
+          </div>
+          <div class="col-3">
+            <input type="number" name="age"  id="age"  placeholder="" required>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            GENDER:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="gender" id="gender" class="b1"  value="male" required><span>Male</span>
+            <input type="radio" name="gender" id="gender" class="c1" value="female" required><span>Female</span>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            ADDRESS:
+          </div>
+          <div class="col-3">
+            <textarea name="address" id="address" required></textarea> 
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-2">
+            PROOF:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="proof" value="aadhaar" id="aadhaar" class="n1"><span>aadhaar</span>
+            <input type="radio" name="proof" value="pan" id="pan" class="n3"><span>pan</span>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            NO OF PERSONS:
+          </div>
+          <div class="col-3">
+            <span>children:</span><input type="number"class="a1" name="children" id="children" required>
+            <span>adult:</span><input type="number"  class="a2" name="adult" id="adult" required>
+            <span>aged:</span><input type="number" class="a3"  name="aged" id="adult"  required>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            PHONE NUMBER:
+          </div>
+          <div class="col-3">
+            <input type="number" name="phone" id="phone"placeholder="" required/>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            DATE OF BOOKING:
+          </div>
+          <div class="col-3">
+            <input type="date" name="dateofbooking"  id="dateofbooking">
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            DATE OF VACATE:
+          </div>
+          <div class="col-3">
+            <input type="date" name="dateofvacate"  id="dateofvacate" oninput="calculatedays()">
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            TOTAL DAYS:
+          </div>
+          <div class="col-3">
+            <input type="number" name="totaldays" id="totaldays" placeholder="">
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            TOTAL BILL:
+          </div>
+          <div class="col-3">
+            <input type="number" name="total" id="total" placeholder="" required>
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            GST PERCENTAGE:
+          </div>
+          <div class="col-3">
+            <select name="gstvalue" id="gstvalue" onchange="gst()" required>
+            <option value="">--SELECT--</option>
+            <option value=10>10</option>
+            <option value=15>15</option> 
+            <option value=20>20</option> 
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-2">
+            NET BILL AMOUNT:
+          </div>
+          <div class="col-3">
+            <input type="number" name="nettotal" id="nettotal" placeholder="" >
+          </div>
+        </div>
+      </div>
+    <input type="submit"  class="btn" value="submit" />
+    <input type="reset" class="btn" value="reset " />
+  </center>
+</form>
+</body>
+</html>

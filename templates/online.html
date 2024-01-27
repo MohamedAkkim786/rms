@@ -1,0 +1,270 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <title>Food Order online</title>
+  <link rel="stylesheet" href="/static/style/styleol.css">
+  <script src="/static/javascript/bill.js"></script>
+</head>
+
+<body>
+<form method="POST" action="#">
+  {% csrf_token %}
+  <center>
+    <h1>ONLINE ORDER</h1>
+  </center>
+
+ 
+    <div class="table" style="font-weight:bolder;">
+      <div class="row"  style="font-weight: bolder;">
+        <div class="col-1" id="head">
+          S.NO
+        </div>
+        <div class="col-2" id="head">
+          NATURE
+        </div>
+        <div class="col-3" id="head">
+          DETAILS
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          1.
+        </div>
+        <div class="col-2">
+          FOOD ORDER CONCERN
+        </div>
+        <div class="col-3">
+          <select name="platform" id="platform" required>
+            <option value="">--Select--</option>
+            <option value="SWIGGY">SWIGGY</option>
+            <option value="ZOMATO">ZOMATO</option>
+            <option value="UBER">UBER</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          2.
+        </div>
+        <div class="col-2">
+          CUSTOMER NAME
+        </div>
+        <div class="col-3">
+          <input type="text" name="customername" id="customername" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          3
+        </div>
+        <div class="col-2">
+          MOBILE
+        </div>
+        <div class="col-3">
+          <input type="number" name="mobileno" id="mobileno"  required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          4
+        </div>
+        <div class="col-2">
+          MAIL
+        </div>
+        <div class="col-3">
+          <input type="text" name="mail" id="mail" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          5.
+        </div>
+        <div class="col-2">
+          DATE & TIME
+        </div>
+        <div class="col-3">
+          <input type="datetime-local" name="datetime" id="datetime" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          6.
+        </div>
+        <div class="col-2">
+          LOCATION
+        </div>
+        <div class="col-3">
+          <input type="text" name="location" id="location" required>
+        </div>
+      </div>
+
+  <center>    <h1>INVOICE</h1></center>
+      <div class="row" style="font-weight: bolder;">
+        <div class="col-1" id="head">
+          S.NO
+        </div>
+        <div class="col-2" id="head">
+          NATURE
+        </div>
+        <div class="col-3" id="head">
+          DETAILS
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          1.
+        </div>
+        <div class="col-2">
+          BILL NO
+        </div>
+        <div class="col-3">
+          <input type="number" name="billno" id="billno" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-1">
+          2.
+        </div>
+        <div class="col-2">
+          ITEM NAME
+        </div>
+        <div class="col-3">
+          <select name="foodlist" id="foodlist" onchange="foodprice()" required>
+            <option value="">--Select--</option>
+            <option value="Curd">Curd</option>
+            <option value="Lemon">Lemon</option>
+            <option value="Briyani">Briyani</option>
+            <option value="Diner Grill">Diner Grill</option>
+            <option value="Unique Meals">Unique Meals</option>
+            <option value="Pizza Posse">Pizza Posse</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          3.
+        </div>
+        <div class="col-2">
+          QUANTITY
+        </div>
+        <div class="col-3">
+          <input type="number" name="quantity" id="quantity"  oninput="parcelFunction()" required/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          4.
+        </div>
+        <div class="col-2">
+          PRICE
+        </div>
+        <div class="col-3">
+          <input type="number" name="price" id="selectNumber" value="" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          5.
+        </div>
+        <div class="col-2">
+          TOTAL
+        </div>
+        <div class="col-3">
+          <input type="number" name="total" id="total" required/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          6.
+        </div>
+        <div class="col-2">
+          GST
+        </div>
+        <div class="col-3">
+          <select name="gstval" id="gstval" onchange="parcelFunction_gst()" required>
+            <option value="">--Select--</option>
+            <option value=5>5%</option>
+            <option value=12>12%</option>
+            <option value=18>18%</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          7.
+        </div>
+        <div class="col-2">
+          NET TOTAL
+        </div>
+        <div class="col-3">
+          <input type="number" id="nettol" name="nettol" required/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          8.
+        </div>
+        <div class="col-2">
+          MODE OF PAYMENT
+        </div>
+        <div class="col-3">
+          <select name="paymentmode" id="paymentmode" required>
+            <option value="">--Select--</option>
+            <option value="CASH">CASH</option>
+            <option value="CARD">CARD</option>
+            <option value="UPI">UPI</option>
+          </select>
+        </div>
+      </div>
+     
+      
+    
+      <div class="row">
+        <div class="col-1">
+          9.
+        </div>
+        <div class="col-2">
+          DELIVERY PERSON NAME
+        </div>
+        <div class="col-3">
+          <input type="text" name="deliverperson" id="deliverperson" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          10.
+        </div>
+        <div class="col-2">
+          DELIVERY PERSON CONTACT
+        </div>
+        <div class="col-3">
+          <input type="number" name="delivercontactno" id="delivercontactno" required>
+        </div>
+      </div>
+      
+    </div>
+    <center>
+      <input type="submit" class="btn">
+      <input type="reset" class="btn">
+    </center>
+  </form>
+<script>
+   var dateTimePicker = document.getElementById("datetime");
+    var currentDate = new Date();
+
+    // Adjust the current date and time to IST (UTC+5:30)
+    var istOffset = 330 * 60 * 1000; // Offset in milliseconds (5 hours 30 minutes)
+    var istTime = new Date(currentDate.getTime() + istOffset);
+
+    // Format the IST date and time to fit the input field's format (YYYY-MM-DDTHH:MM)
+    var formattedDateTime = istTime.toISOString().slice(0, 16);
+
+    dateTimePicker.value = formattedDateTime;
+</script>
+</body>
+
+</html>

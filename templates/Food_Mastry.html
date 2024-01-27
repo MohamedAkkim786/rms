@@ -1,0 +1,179 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <title>FOOD MASTER</title>
+
+  <link rel="stylesheet" href="/static/style/stylefm.css" />
+  
+</head>
+
+<body>
+  <form action="">
+
+    
+  
+  <center>
+<table class="dt">
+      <tr>
+        <td><label for="">DATE</label></td>
+        <td><input type="datetime-local" id="datetime" required></td>
+</tr>
+    </table>
+    <h1>Food Master</h1>
+    <table border="1px">
+      <tr>
+        <th>SNO</th>
+        <th>NAME OF THE FOOD</th>
+        <th>FOOD CATEGORY</th>
+        <th>PRICE OF THE FOOD</th>
+      </tr>
+      <tr>
+        <td >1</td>
+        <td><input type="text" name="foodname1" id="foodname1" required value="sambar"></td>
+        <td><select name="category1" id="category1" required>
+            <option value="">--Select--</option>
+            <option value="">BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="" selected>LUNCH</option>
+          </select></td>
+        <td><input type="text" value="60" required></td>
+
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><input type="text" name="foodname2" id="foodname2" required value="curd"></td>
+        <td><select name="catagory2" id="catagory2" required>
+            <option value="">--Select--</option>
+            <option value="" selected>BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="20" required></td>
+
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><input type="text" name="foodname3" id="foodname3" required value="lemon"></td>
+        <td><select name="catagory3" id="catagory3" required>
+            <option value="">--Select--</option>
+            <option value="" selected>BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="30" required></td>
+
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><input type="text" name="foodname4" id="foodname4" required value="briyani" ></td>
+        <td><select name="catagory4" id="catagory4" required>
+            <option value="">--Select--</option>
+            <option value="" >BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="" selected>LUNCH</option>
+          </select></td>
+        <td><input type="text" value="100" required></td>
+
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><input type="text" name="foodname5" id="foodname5" value="Tomato rice" required></td>
+        <td><select name="catagory5" id="catagory5" required>
+            <option value="">--Select--</option>
+            <option value="" selected>BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="40" required></td>
+
+      </tr>
+      <tr>
+        <td>6</td> 
+        <td><input type="text" name="foodname6" id="foodname6" value="Meals" required ></td>
+        <td><select name="catagory6" id="catagory6">
+            <option value="">--Select--</option>
+            <option value="">BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="" selected>LUNCH</option>
+          </select></td>
+        <td><input type="text" value="50"></td>
+
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><input type="text"  name="foodname7" id="foodname7" value="Naan" required ></td>
+        <td><select name="catagory7" id="catagory7">
+            <option value="">--Select--</option>
+            <option value="">BREAKFAST</option>
+            <option value="" selected>DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="30"></td>
+
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><input type="text" value="Pongal"></td>
+        <td><select name="catagory" id="">
+            <option value="">--Select--</option>
+            <option value="" selected>BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="40"></td>
+
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><input type="text" value="Tandoori"> </td>
+        <td><select name="catagory" id="">
+            <option value="">--Select--</option>
+            <option value="">BREAKFAST</option>
+            <option value="">DINNER</option>
+            <option value="" selected>LUNCH</option>
+          </select></td>
+        <td><input type="text" value="360"></td>
+
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><input type="text" value="parota"></td>
+        <td><select name="catagory" id="">
+            <option value="">--Select--</option>
+            <option value="">BREAKFAST</option>
+            <option value="" selected>DINNER</option>
+            <option value="">LUNCH</option>
+          </select></td>
+        <td><input type="text" value="20"></td>
+
+      </tr>
+    </table>
+     
+    <br>
+
+    <input type="submit" class="btn" value="Submit">
+    <input type="reset" class="btn" value="Reset">
+  </center>
+</form>
+<script>
+  var dateTimePicker = document.getElementById("datetime");
+   var currentDate = new Date();
+
+   // Adjust the current date and time to IST (UTC+5:30)
+   var istOffset = 330 * 60 * 1000; // Offset in milliseconds (5 hours 30 minutes)
+   var istTime = new Date(currentDate.getTime() + istOffset);
+
+   // Format the IST date and time to fit the input field's format (YYYY-MM-DDTHH:MM)
+   var formattedDateTime = istTime.toISOString().slice(0, 16);
+
+   dateTimePicker.value = formattedDateTime;
+</script>
+
+</body>
+
+
+
+</html>

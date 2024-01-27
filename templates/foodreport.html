@@ -1,0 +1,110 @@
+{% include "navbar.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+        <title>Food Reports</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              margin: 0;
+              background:url(/static/images/hms.jpg) no-repeat ;
+              background-size: cover ;
+            }
+            
+            .navbar {
+              overflow: hidden;
+              background-color: #333; 
+            }
+            
+            .navbar a {
+              float: left;
+              font-size: 16px;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            .subnav {
+              float: left;
+              overflow: hidden;
+            }
+            
+            .subnav .subnavbtn {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              color: white;
+              padding: 14px 16px;
+              background-color: inherit;
+              font-family: inherit;
+              margin: 0;
+            }
+            
+            .navbar a:hover, .subnav:hover .subnavbtn {
+              background-color: red;
+            }
+            
+            .subnav-content {
+              display: none;
+              position: absolute;
+              left: 0;
+              background-color: red;
+              width: 100%;
+              z-index: 1;
+            }
+            
+            .subnav-content a {
+              float: left;
+              color: white;
+              text-decoration: none;
+            }
+            
+            .subnav-content a:hover {
+              background-color: #eee;
+              color: black;
+            }
+            
+            .subnav:hover .subnav-content {
+              display: block;
+            }
+    
+  </style>
+</head>
+<body>
+<center>
+    <h1 style="margin-top:60px;">FOOD REPORT</h1>
+</center>
+    <table id="customers" width="100%" border="1">
+    <tr align="center">
+        <th>BILL NO</th>
+        <th>ITEM NAME</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+        <th>TOTAL</th>
+        <th>FINAL AMOUNT</th>
+        <th>GST</th>
+        <th>NET TOTAL</th>
+        <th>MODE OF PAYMENT</th>
+    </tr>
+    {% for line in food %}
+    <tr>      
+        <td>{{line.bill_no}} </td>
+        <td>{{line.foodlist}}</td>
+        <td>{{line.quantity}}</td>
+        <td>{{line.selectNumber}}</td>
+        <td>{{line.total}}</td>
+        <td>{{line.finalamt}}</td>
+        <td>{{line.gstval}}</td>
+        <td>{{line.nettol}}</td>
+        <td>{{line.payment}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

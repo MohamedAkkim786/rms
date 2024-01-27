@@ -1,0 +1,128 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Entry</title>
+    
+    <link rel="stylesheet" href="/static/style/styles_IE.css" />
+    <style>
+      body{
+                background:url(/static/images/hotel.jpg)  ;
+        
+            }
+    </style>
+</head>
+<body>
+<form method="POST" action="#">
+      {% csrf_token %}
+        <center>
+            <h1 class="header"  >Income Entry</h1>
+            <h2 class="header2"> Hotel </h2>
+            <table  border="2" class="d1">
+              <tr>
+                <th>
+                  S.NO
+                </th>
+                <th>
+                  PARTICULARS
+                </th>
+                <th>
+                  DETAILS
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  1.
+                </td>
+                <td>
+                    Room Booking
+                </td>
+                <td>
+                  <input type="number" name="hotelroombooking" id="hotel_roombooking" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2.
+                </td>
+                <td>
+                    Date
+                </td>
+                <td>
+                   <input type="date" name="date1" id="date1" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3.
+                </td>
+                <td>
+                    Amount
+                </td>
+                <td>
+                  <input type="number" name="amount1" id="amount1" required>
+                </td>
+              </tr>
+            </table>
+        </center>     
+        <center>
+            <h2 class="header2"> Restaurant </h2>
+            <table class="d1">
+              <tr>
+                <th>
+                  S.NO
+                </th>
+                <th>
+                  PARTICULARS
+                </th>
+                <th>
+                  DETAILS
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  1.
+                </td>
+                <td>
+                  Bill Of Income
+                </td>
+                <td>
+                  <input type="number" name="restaurantbill" id="restaurant_bill" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2.
+                </td>
+                <td>
+                    Date
+                </td>
+                <td>
+                   <input type="date" name="date2" id="date2" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3.
+                </td>
+                <td>
+                    Amount
+                </td>
+                <td>
+                  <input type="number" name="amount2" id="amount2" required>
+                </td>
+              </tr>
+            </table>
+            <button class="button" id="submitbutton" type="submit">Submit</button>
+            <button class="button" id="resetbutton" type="reset">Reset</button>
+        </center> 
+      </form>
+      <script>
+        document.getElementById("date1").valueAsDate = new Date();
+        document.getElementById("date2").valueAsDate = new Date();
+       </script>
+</body>
+</html>

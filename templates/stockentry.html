@@ -1,0 +1,144 @@
+{% include "navbar.html" %}
+{% load static %}
+<html>
+    <head>
+        <title> STOCK FORM</title>
+        <script>
+            function stock()
+            {
+                var table=document.getElementById("table").value;
+                var chair=document.getElementById("chair").value;           
+                var sofa=document.getElementById("sofa").value;               
+                var fan=document.getElementById("fan").value;               
+                var wash_basin=document.getElementById("wash basin").value;              
+                var telephone=document.getElementById("telephone").value;           
+                var cupboard=document.getElementById("cupboard").value;        
+                var ac=document.getElementById("ac").value;
+                var add=(table*1)+(chair*1)+(sofa*1)+(fan*1)+(wash_basin*1)+(telephone*1)+(cupboard*1)+(ac*1);
+                document.getElementById("total").value=(add)
+            }
+        </script>
+    </head>
+    <style>
+        body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        color: white;
+        margin: 0;
+        
+      }
+      
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+.stock{
+    border-radius: 5px;
+}
+    </style>
+    <body>
+<form>
+            <table align="center">
+                <h1 align="center"> STOCK ENTRY FORM </h1>
+                <h2 align="center"> LIST OF INVENTORY AVAILABLE RESTAURANT</h2>
+                <tr>
+                    <td> TABLE:</td>
+                    <td><input type="text" name="table" id="table" class="stock" required></input></td>
+                </tr>
+                <tr>
+                    <td> CHAIR</td>
+                    <td><input type="text" name="Chair" id="chair" class="stock" required></input></td>
+                </tr>
+                <tr>
+                    <td> SOFA :</td>
+                    <td><input type="text" name="sofa" id="sofa" class="stock" required></input></td>
+                </tr>
+                <tr>
+                    <td> FAN:</td>
+                    <td> <input type="text" name="fan" id="fan" class="stock" required ></input></td>
+                </tr>
+                <tr>
+                    <td> WASH BASIN:</td>
+                    <td> <input type="text" name="wash basin" id="wash basin" class="stock" required ></input></td>
+                </tr>
+                <tr>
+                    <td> TELEPHONE:</td>
+                    <td> <input type="text" name="telephone" id="telephone" class="stock" required ></input></td>
+                </tr>
+                <tr>
+                    <td> CUPBOARD:</td>
+                    <td> <input type="text" name="cupboard" id="cupboard" class="stock" required ></input></td>
+                </tr>
+                <tr>
+                    <td>AC:</td>
+                    <td><input type="text" name="ac" id="ac" class="stock" required ></input></td>
+                </tr>
+                <tr>
+                    <td>TOTAL:</td>
+                    <td><input type="text" name="total" id="total" class="stock" required ></input></td>
+                </tr>
+            </table>
+            <center>
+            <button class="button" id="submitbutton" type="button" onclick="stock();">Submit</button>
+            <button class="button" id="resetbutton2" type="reset">Reset</button>
+            </center>
+        </form>
+    </body>
+</html>
+                <
+
+                

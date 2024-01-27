@@ -1,0 +1,65 @@
+<div class="navbar">
+   
+    <div class="subnav">
+      <button class="subnavbtn"> Hotel <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+          <a href="{% url 'hotelbooking' %}">Hotel Booking</a>
+          <a href="{% url 'roommaintenance' %}">Room Maintenance</a>
+          <a href="{% url 'roomcancellation' %}">Room Cancellation</a> 
+          <a href="{% url 'reception' %}">Reception </a>
+          <a href="{% url 'bar' %}">Bar </a>
+          <a href="{% url 'hotelreport' %}">Hotel Report </a>
+        </div>
+    </div>
+<div class="subnav">
+  <button class="subnavbtn">Food <i class="fa fa-caret-down"></i></button>
+  <div class="subnav-content">
+    <a href="{% url 'bill' %}">Billing</a>
+    <a href="{% url 'Food_Mastry' %}">Food Master</a>
+    <a href="{% url 'dining' %}">Dining</a>
+    <a href="{% url 'parcel' %}">Parcel</a>
+    <a href="{% url 'online' %}">Online Orders</a>
+    <a href="{% url 'foodreport' %}">Food Report</a>
+  </div>
+</div> 
+<div class="subnav">
+  <button class="subnavbtn">Accounts <i class="fa fa-caret-down"></i></button>
+  <div class="subnav-content">
+    <a href="{% url 'Expenses_Entry' %}">Expenses Entry</a>
+    <a href="{% url 'Groceries_Entry' %}">Groceries Entry</a>
+    <a href="{% url 'Gas_Maintenance' %}">Gas Maintenance</a>
+    <a href="{% url 'Income_Entry' %}">Income Entry</a>
+  <a href="{% url 'Advertisement' %}">Advertisement</a>
+  <a href="{% url 'accountsreport' %}">Account Report</a>
+  </div>
+</div>
+<div class="subnav">                                             
+  <button class="subnavbtn">
+    RMS <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="subnav-content">
+    <a href="{% url 'workersapplication' %}">Workers Application </a>
+    <a href="{% url 'veseelmaintenance' %}">Vessel</a>
+    <a href="{% url 'workersattendance' %}">Workers Attendance</a>
+    <a href="{% url 'workerssalary' %}">Workers Salary</a>
+    </div>
+</div>
+<div class="subnav">                                     <!--  {% load static %} -->
+  <button class="subnavbtn">
+    Stocks <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="subnav-content">
+    <a href="{% url 'stockentry' %}">Stock Entry</a>
+    </div>
+</div>
+<div class="subnav">
+  <button class="subnavbtn">
+    MISC. <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="subnav-content">
+    <a href="{% url 'Parking' %}">Parking</a>
+    
+    </div>
+</div>
+<a href="{% url 'Logout' %}">Logout</a>
+</div>

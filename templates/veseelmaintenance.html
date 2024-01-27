@@ -1,0 +1,313 @@
+{% include "navbar.html" %}
+{% load static %} 
+<html>
+    <head>
+        <title> VESEEL MAINTENANCE </title>
+    </head>
+    <script>
+            function veseel()
+            {
+                var cooker=document.getElementById("cooker").value;               
+                var knife=document.getElementById("knife").value;              
+                var Bowl=document.getElementById("Bowl").value;
+                var cutting_board=document.getElementById("cutting_board").value;             
+                var frying_pan=document.getElementById("frying_pan").value;              
+                var metal_spoon=document.getElementById("metal_spoon").value;               
+                var spiceborn=document.getElementById("spiceborn").value;              
+                var cake_pan=document.getElementById("cake_pan").value;              
+                var mug=document.getElementById("mug").value;               
+                var plate=document.getElementById("plate").value;             
+                var rollpin=document.getElementById("rollpin").value;               
+                var pot=document.getElementById("pot").value;              
+                var grinder=document.getElementById("grinder").value;              
+                var fridge=document.getElementById("fridge").value;               
+                var mixer=document.getElementById("mixer").value;
+                var add=(cooker*1)+(knife*1)+(Bowl*1)+(cutting_board*1)+(frying_pan*1)+(metal_spoon*1)+(spiceborn*1)+(cake_pan*1)+(mug*1)+(plate*1)+(rollpin*1)
+                +(pot*1)+(grinder*1)+(fridge*1)+(mixer*1)
+
+                document.getElementById("total").value=(add)
+            }
+        </script>
+    <body>
+<style>
+            body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        color: white;
+        
+      }
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+    .button
+    {
+        background-color: yellowgreen;
+        font-size: 25px;
+    }
+    .button
+    {
+        background-color:yellowgreen;
+        font-size: 25px;
+    }
+    
+        </style>
+        <form>
+            <form action="">
+                <center>
+                    <h1 class="header"  >VESEEL MAINTENANCE</h1>
+                    <table  border="2" class="d1">
+                        <tr>
+                            <th>
+                                S.NO
+                            </th>
+                            <th>
+                                VESEEL NAME
+                            </th>
+                            <th>
+                                QUANTITY
+                            </th>
+                             </tr>
+                        <tr>
+                            <td>
+                                1.
+                            </td>
+                            <td>
+                                <input type="text" value="Cooker" name="cooker" id="cooker" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                2.
+                            </td>
+                            <td>
+                                <input type="text"value="Knife"name="knife" id="knife" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3.
+                            </td>
+                            <td>
+                                <input type="text"value="Bowl"name="Bowl" id="Bowl" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                4.
+                            </td>
+                            <td>
+                                <input type="text"value="Cutting board"name="cutting_board" id="cutting_board" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5.
+                            </td>
+                            <td>
+                                <input type="text"value="Frying_pan"name="frying_pan" id="frying_pan" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                6.
+                            </td>
+                            <td>
+                                <input type="text"value="Metal spoon"name="metalspoon" id="metalspoon" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                7.
+                            </td>
+                            <td>
+                                <input type="text"value="spiceborn"name="spiceborn" id="spiceborn" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                8.
+                            </td>
+                            <td>
+                                <input type="text"value="Cake pan"name="cake_pan" id="cake_pan" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                9.
+                            </td>
+                            <td>
+                                <input type="text"value="Mug"name="mug" id="mug" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                    
+                        </tr>
+                        <tr>
+                            <td>
+                                10.
+                            </td>
+                            <td>
+                                <input type="text"value="Plate"name="plate" id="plate" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr> 
+                            <td>
+                                11.
+                            </td>
+                            <td>
+                                <input type="text"value="Roll pin"name="rollpin" id="rollpin" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                12.
+                            </td>
+                            <td>
+                                <input type="text"value="Pot"name="pot" id="pot" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                13.
+                            </td>
+                            <td>
+                                <input type="text"value="Grinder"name="grinder" id="grinder" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                14.
+                            </td>
+                            <td>
+                                <input type="text"value="Fridge"name="fridge" id="fridge" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                15.
+                            </td>
+                            <td>
+                                <input type="text"value="Mixer"name="mixer" id="mixer" required>
+                            </td>
+                            <td>
+                                <input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            16.
+                        </td>
+                        <td>
+                            <input type="text"value="TOTAL"name="total" id="total" required>
+                        </td>
+                        <td>
+                            <input type="number">
+                        </td>
+                        </tr>
+                    </table>
+                    <button class="button" id="submitbutton" type="button" onclick="veseel();">Submit</button>
+                    <button class="button" id="resetbutton2" type="reset">Reset</button
+                </center>
+            </form>
+                </body>
+                </html>
+                

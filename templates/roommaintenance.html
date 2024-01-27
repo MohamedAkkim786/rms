@@ -1,0 +1,318 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOM MAINTENANCE</title>
+    <style>
+        body{
+            background:url(/static/images/hotel.jpg) no-repeat; height: 950px;
+            background-size: cover ;
+           
+        }
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      
+      
+      .navbar {
+        overflow: hidden;
+        background-color: #333; 
+       
+      
+      }
+      
+      .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      .subnav {
+        float: left;
+        overflow: hidden;
+      }
+      
+      .subnav .subnavbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      
+      .navbar a:hover, .subnav:hover .subnavbtn {
+        background-color: red;
+      }
+      
+      .subnav-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        background-color: red;
+        width: 100%;
+        z-index: 1;
+      }
+      
+      .subnav-content a {
+        float: left;
+        color: white;
+        text-decoration: none;
+      }
+      
+      .subnav-content a:hover {
+        background-color: #eee;
+        color: black;
+      }
+      
+      .subnav:hover .subnav-content {
+        display: block;
+      }
+      .table{
+margin-top: 50px;
+margin-left: 30%;
+margin-right: 30%;
+}
+.col-2 {
+float: left;
+width: 50%;
+margin-top: 6px;
+text-align: left;
+color:#ffff;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.col-3 {
+float: left;
+width: 50%;
+margin-top: 6px;
+
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+input {
+width: 100%;
+padding: 5px;
+border-radius: 10px;
+border: none;
+}
+
+.row{
+margin: 2px;
+}
+.btn{
+background-color:#ffe6a7;
+border: none;
+border-radius: 5px;
+width: 100px;
+height: 30px;
+margin-right: 20px;
+}
+.btn{
+margin-top: 15px;
+}
+input[type=submit]:hover {
+background-color: burlywood;
+border: none;
+border-radius: 10px;
+}
+input[type=reset]:hover {
+background-color: burlywood;
+border: none;
+border-radius: 10px;
+}
+h1{
+  color: tomato;
+  margin-top: 10%;
+  margin-left: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+select{
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+textarea{
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+.table {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+input {
+  width: 100%
+}
+
+.col-2 {
+  float: left;
+  width: 65%;
+  margin-top: 6px;
+}
+
+.col-3 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+}
+.b1{
+  margin-left:15px;
+  
+}
+.c1{
+  margin-left: 22px;
+}
+ .m1{ 
+  margin-left:24px;
+ }
+.m2{ 
+  margin-right:27px;
+  
+ } 
+}
+span{
+  color: #ffff;
+  font-family: 'Times New Roman', Times, serif;
+}
+.b1{
+  width: 30px;
+}
+.c1{
+  width: 30px;
+}
+.m1{
+  width: 30px;
+}
+.m2{
+  width: 30px;
+}
+</style>
+</head>
+<body>
+
+  <form action="#" method="POST">
+    {% csrf_token %}
+<center>
+    <h1>ROOM MAINTENANCE</h1>
+
+      <div class="table" style="font-weight:bolder;">
+        <div class="row">
+          <div class="col-2" >
+            <label for="roomtype">TYPES OF ROOM:</label>
+          </div>
+          <div class="col-3" >
+            <select name="roomtype" id="roomtype" class="a1"  required> 
+              <option value="SELECT">--SELECT--</option>
+              <option value="AC">AC</option> 
+              <option value="NON-AC">NON-AC</option> 
+          </select>    
+          </div>
+        
+        </div>
+        <div class="row">
+          <div class="col-2">
+            BEDS:
+          </div>
+          <div class="col-3" id="c3" > 
+            <input type="radio" name="bed" id="bed" value="single"  class="b1"><span>SINGLE</span>
+            <input type="radio" name="bed" id="bed" value="double"   class="c1"><span>DOUBLE</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            ROOM NO:
+          </div>
+          <div class="col-3">
+            <input type="number" name="roomno" id="roomno" class="v1" required placeholder=""/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            PILLOW AVAILABILITY:
+          </div>
+          <div class="col-3">
+            <input type="number" name="pillow"   class="v1" id="pillow" required placeholder="">
+          </div>
+         
+        </div>
+        <div class="row">
+          <div class="col-2">
+            BEDSHEET AVAILABILITY:
+          </div>
+          <div class="col-3">
+            <input type="number" name="bedsheet"   class="v1" id="bedsheet" required placeholder="">
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-2">
+            RESTROOM CLEANING:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="restroomcleaning" id="restroomcleaning"   value="verified"  class="m1"><span>VERIFIED</span>
+            <input type="radio" name="restroomcleaning" id="restroomcleaning"   value="not"   class="m2"><span>NOT</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            WATER AVAILABILITY:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="wateravailability" id="wateravailability" value="verified"  class="m1"><span>VERIFIED</span>
+            <input type="radio" name="wateravailability" id="wateravailability" value="not"  class="m2"><span>NOT</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            TV AVAILABE:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="tvavailability" id="tvavailability" value="verified" class="m1"><span>VERIFIED</span>
+            <input type="radio" name="tvavailability" id="tvavailability" value="not"   class="m2"><span>NOT</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            AC CHECKING:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="acchecking" id="acchecking" value="verified"    class="m1"><span>VERIFIED</span>
+            <input type="radio" name="acchecking"  id="acchecking" value="not"  class="m2"><span>NOT</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            FURNITURE CHECKING:
+          </div>
+          <div class="col-3">
+            <input type="radio" name="furniturechecking" id="furniturechecking" value="verified"  class="m1"><span>VERIFIED</span>
+            <input type="radio" name="furniturechecking" id="furniturechecking" value="not"  class="m2"><span>NOT</span>
+          </div>
+        </div>
+      </div>
+    <input type="submit"  class="btn"value="submit" />
+    <input type="reset" class="btn" value="reset " />
+  </center>
+</form>
+</body>
+</html>

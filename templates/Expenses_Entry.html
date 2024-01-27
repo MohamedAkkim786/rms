@@ -1,0 +1,178 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Entry</title>
+    
+    <link rel="stylesheet" href="/static/style/styles_EE.css" />
+    <style>
+      body{
+                background:url(/static/images/hotel.jpg)  ;
+
+            }
+    </style>
+</head>
+<body>
+ <form action="#" method="POST">
+    {% csrf_token %}
+    <table border="2" class="d1" id="date">
+        <th>
+            DATE
+        </th>
+        <td>
+            <input type="date" name="date1" id="date1" required>
+        </td>
+    </table>
+
+    <center>
+     <div  class="Without_Responsive">
+        <h1 class="header"  >Expenses Entry</h1>
+        <div>
+        <table  border="3" class="d1">
+            <tr>
+                <th>
+                    S.NO
+                </th>
+                <th>
+                    PARTICULARS
+                </th>
+                <th>
+                    AMOUNT
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    1.
+                </td>
+                <td>
+                    <input name="particular1" id="particular1" type="text"  required>
+                </td>
+                <td>
+                    <input name="amount1" id="amount1" class="amount" type="number" oninput="findTotal()"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2.
+                </td>
+                <td>
+                    <input name="particular2" id="particular2" type="text"  required>
+                </td>
+                <td>
+                    <input name="amount2" id="amount2" class="amount" type="number" oninput="findTotal()" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3.
+                </td>
+                <td>
+                    <input name="particular3" id="particular3" type="text"  required>
+                </td>
+                <td>
+                    <input name="amount3" id="amount3" class="amount" type="number" oninput="findTotal()" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4.
+                </td>
+                <td>
+                    <input name="particular4" id="particular4" type="text"  required>
+                </td>
+                <td>
+                    <input name="amount4" id="amount4" class="amount" type="number" oninput="findTotal()"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5.
+                </td>
+                <td>
+                    <input name="particular5" id="particular5" type="text"  required>
+                </td>
+                <td>
+                    <input name="amount5" id="amount5" class="amount" type="number" oninput="findTotal()"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    6.
+                </td>
+                <td>
+                    <input name="particular6" id="particular6" type="text" >
+                </td>
+                <td> 
+                    <input name="amount6" id="amount6" class="amount" type="number" oninput="findTotal()" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    7.
+                </td>
+                <td>
+                    <input name="particular7" id="particular7" type="text" >
+                </td>
+                <td>
+                    <input name="amount7" id="amount7" class="amount" type="number" oninput="findTotal()" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    8.
+                </td>
+                <td>
+                    <input name="particular8" id="particular8" type="text" >
+                </td>
+                <td>
+                    <input name="amount8" id="amount8" class="amount" type="number" oninput="findTotal()" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    9.
+                </td>
+                <td>
+                    <input name="particular9" id="particular9" type="text" >
+                </td>
+                <td>
+                    <input name="amount9" id="amount9" class="amount" type="number" oninput="findTotal()" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10.
+                </td>
+                <td>
+                    <input name="particular" id="particular10" type="text" >
+                </td>
+                <td>
+                    <input name="amount" id="amount10" class="amount" type="number" oninput="findTotal()" >
+                </td>
+            </tr>
+            <tr> 
+                <td colspan="2" style="font-weight: 900; background-color:#f7c469;color : rgb(87, 57, 18);">
+                   Total
+                </td>
+                <td>
+                    <input name="totalamount" id="totalamount" class="total-amount" type="number" >
+                </td>
+            </tr>
+        </table>
+        </div>
+        <br>
+        <button  class="button" id="submitbutton" type="submit">Submit</button>
+        <button  class="button" id="resetbutton" type="reset">Reset</button>
+     </div>
+    </center>
+  </form>
+
+  <script src="/static/javascript/accounts.js"></script>
+  <script>
+    document.getElementById("date1").valueAsDate = new Date();
+   </script>
+</body>
+</html>

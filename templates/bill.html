@@ -1,0 +1,140 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>BILLING</title>
+    <link rel="stylesheet" href="/static/style/stylebill.css" />
+    <script src="/static/javascript/bill.js"></script>
+    
+  </head>
+
+  <body >
+  <form method="POST" action="#">
+    {% csrf_token %}
+      <center><h1>Bill Details</h1>
+
+
+
+      <table border="1px" cellpadding="12" class="t1">
+        <tr>
+          <th>BILL NO</th>
+          <th>ITEM NAME</th>
+          <th>QUANTITY</th>
+          <th>PRICE</th>
+          <th>TOTAL</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><input type="text" name="bill_no" id="bill_no"  required/></td>
+          <td><select name="foodlist1" id="foodlist1" onchange="foodprice()" required>
+            <option value="--Select--">--Select--</option>
+            <option value="Curd">Curd</option>
+            <option value="Lemon">Lemon</option>
+            <option value="Briyani">Briyani</option>
+            <option value="Diner Grill">Diner Grill</option>
+            <option value="Unique Meals">Unique Meals</option>
+            <option value="Pizza Posse">Pizza Posse</option>
+          </select></td>
+          <td><input type="text" name="quantity1" id="quantity1"  oninput="newfunction()" required/></td>
+          <td><input type="text" name="selectNumber1" id="selectNumber1" value="" required /></td>
+          <td><input type="text" name="total1" id="total1" required/></td>
+        </tr>
+        <tr>
+
+          <td><select name="foodlist2" id="foodlist2" onchange="foodprice1()" required>
+            <option value="--Select--">--Select--</option>
+            <option value="Curd">Curd</option>
+            <option value="Lemon">Lemon</option>
+            <option value="Briyani">Briyani</option>
+            <option value="Diner Grill">Diner Grill</option>
+            <option value="Unique Meals">Unique Meals</option>
+            <option value="Pizza Posse">Pizza Posse</option>
+          </select></td>
+          <td><input type="text" name="quantity2" id="quantity2"  oninput="newfunction()" required/></td>
+          <td><input type="text" name="selectNumber2" id="selectNumber2" required/></td>
+          <td><input type="text" name="total2" id="total2"  required/></td>
+        </tr>
+        <tr>
+         
+          <td><select name="foodlist3" id="foodlist3" onchange="foodprice2()" required>
+            <option value="--Select--">--Select--</option>
+            <option value="Curd">Curd</option>
+            <option value="Lemon">Lemon</option>
+            <option value="Briyani">Briyani</option>
+            <option value="Diner Grill">Diner Grill</option>
+            <option value="Unique Meals">Unique Meals</option>
+            <option value="Pizza Posse">Pizza Posse</option>
+          </select></td>
+          <td><input type="text" name="quantity3"   id="quantity3"  oninput="newfunction()" required/></td>
+          <td><input type="text" name="selectNumber3"   id="selectNumber3" required/></td>
+          <td><input type="text" name="total3" id="total3"    required/></td>
+        </tr>
+        <tr>
+ 
+          <td><select name="foodlist" id="foodlist4" onchange="foodprice3()" required>
+            <option value="--Select--">--Select--</option>
+            <option value="Curd">Curd</option>
+            <option value="Lemon">Lemon</option>
+            <option value="Briyani">Briyani</option>
+            <option value="Diner Grill">Diner Grill</option>
+            <option value="Unique Meals">Unique Meals</option>
+            <option value="Pizza Posse">Pizza Posse</option>
+          </select></td>
+          <td><input type="text" name="quantity" id="quantity4"  oninput="newfunction()" required/></td>
+          <td><input type="text" name="selectNumber" id="selectNumber4"required /></td>
+          <td><input type="text" name="total" id="total4"  required/></td>
+        </tr>
+        <tr>
+          <td colspan="4" align="center" class="tol" > Total</td>
+          <td><input type="number" name="finalamt" id="finalamt"></td>
+        </tr>
+      </table>
+    </center>
+    
+      <br />
+     
+      <br />
+
+      <div class="lpay">
+        <table border="10px">
+          <tr>
+            <th><label for="" name="gst" id="gst">GST</label></th>
+            <td><select name="gstval" id="gstval" onchange="gst()" required>
+              <option value="">--Select--</option>
+              <option value=5>5%</option>
+              <option value=12>12%</option>
+              <option value=18>18%</option>
+            </select></td>
+          </tr>
+          <tr>
+            <th>
+              <label for="" name="net" id="net" class="fname"
+                >NET TOTAL</label
+              >
+            </th>
+            <td><input type="text" id="nettol" name="nettol" required/></td>
+          </tr>
+          <tr>
+            <th><label for="" name="pay" id="pay">MODE OF PAYMENT</label></th>
+            <td>
+              <select name="payment" id="payment" required>
+                <option value="">--Select--</option>
+                <option value="CASH">CASH</option>
+                <option value="CARD">CARD</option>
+                <option value="UPI">UPI</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+    
+
+      <br />
+      <center>
+        <button type="submit" class="btn" value="Submit" >Submit</button>
+        <button type="reset" class="btn" value="Reset" >Reset</button>
+      </center>
+    </form>
+    
+  </body>
+</html>

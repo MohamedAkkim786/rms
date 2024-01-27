@@ -1,0 +1,112 @@
+{% include "navbar.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+        <title>Hotel Reports</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              margin: 0;
+              background:url(/static/images/hms.jpg) no-repeat ;
+              background-size: cover ;
+            }
+            
+            .navbar {
+              overflow: hidden;
+              background-color: #333; 
+            }
+            
+            .navbar a {
+              float: left;
+              font-size: 16px;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            .subnav {
+              float: left;
+              overflow: hidden;
+            }
+            
+            .subnav .subnavbtn {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              color: white;
+              padding: 14px 16px;
+              background-color: inherit;
+              font-family: inherit;
+              margin: 0;
+            }
+            
+            .navbar a:hover, .subnav:hover .subnavbtn {
+              background-color: red;
+            }
+            
+            .subnav-content {
+              display: none;
+              position: absolute;
+              left: 0;
+              background-color: red;
+              width: 100%;
+              z-index: 1;
+            }
+            
+            .subnav-content a {
+              float: left;
+              color: white;
+              text-decoration: none;
+            }
+            
+            .subnav-content a:hover {
+              background-color: #eee;
+              color: black;
+            }
+            
+            .subnav:hover .subnav-content {
+              display: block;
+            }
+    
+  </style>
+</head>
+<body>
+  
+    
+    <center>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <h1 style="margin-top:60px;">ACCOUNTS REPORT</h1>
+        Select Date
+        <input type="date" name="date" id="date1" required>
+        <button type="submit">Submit</button>
+        </form>
+    </center>
+<table id="customers" border="1" align="center" style="margin-top: 25px;">
+    
+    <tr >
+        <th>PARTICULARS</th>
+        <th>AMOUNT </th>
+    </tr>
+    <tr>
+        <th>TOTAL INCOME</th>
+        <td>{{amount}}</td>
+    </tr>
+    <tr>
+        <th>TOTAL EXPENSES</th>
+        <td>{{totalamount}}</td>
+    </tr>
+    <tr>
+        <th>CASH IN HAND</th>
+        <td>{{cashinhand}}</td>
+    </tr>
+    
+    
+    
+</table>
+</body>
+</html>

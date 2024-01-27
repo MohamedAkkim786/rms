@@ -1,0 +1,145 @@
+{% include "navbar.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+        <title>HOTEL REPORT</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background:url(/static/images/hms.jpg) no-repeat ;
+      background-size: cover ;
+    }
+    
+    .navbar {
+      overflow: hidden;
+      background-color: #333; 
+    }
+    
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .subnav {
+      float: left;
+      overflow: hidden;
+    }
+    
+    .subnav .subnavbtn {
+      font-size: 16px;  
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+    
+    .navbar a:hover, .subnav:hover .subnavbtn {
+      background-color: red;
+    }
+    
+    .subnav-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      background-color: red;
+      width: 100%;
+      z-index: 1;
+    }
+    
+    .subnav-content a {
+      float: left;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .subnav-content a:hover {
+      background-color: #eee;
+      color: black;
+    }
+    
+    .subnav:hover .subnav-content {
+      display: block;
+    }
+    .button{
+     background-color: #F7D56A ;
+     width: 100px;
+     height: 30px;
+     border-radius: 10px;
+     border: none;
+     cursor: pointer;
+     margin-top: 30px;
+     color:rgb(87, 57, 18) ;
+     font-weight: 700;
+     margin-left: 50%;
+     
+}
+
+
+</style>
+</head>
+<body>
+<center><h1 style="margin-top:60px;">Hotel Reports</h1></center>
+    
+
+    
+<table id="customers" width="100%" border="1">
+    <tr align="center">
+        <th>NAME OF THE CUSTOMER</th>
+        <th>DATE OF BIRTH</th>
+        <th>AGE</th>
+        <th>GENDER</th>
+        <th>ADDRESS</th>
+        <th>PROOF</th>
+        <th>children</th>
+        <th>adult</th>
+        <th>aged</th>
+        <th>PHONE NUMBER</th>
+        <th>DATE OF BOOKING</th>
+        <th>DATE OF VACATE</th>
+        <th>TOTAL DAYS</th>
+        <th>TOTAL BILL</th>
+        <th>GST PERCENTAGE</th>
+        <th>NET BILL AMOUNT</th>
+        
+
+
+        </tr>
+
+    {% for line in hotel %}
+    <tr>
+        
+        <td>{{line.customername}} </td>
+        <td>{{line.dob}}</td>
+        <td>{{line.age}}</td>
+        <td>{{line.gender}}</td>
+        <td>{{line.address}}</td>
+        <td>{{line.proof}}</td>
+        <td>{{line.children}}</td>
+        <td>{{line.adult}}</td>
+        <td>{{line.aged}}</td>
+        <td>{{line.phone}}</td>
+        <td>{{line.dateofbooking}}</td>
+        <td>{{line.dateofvacate}}</td>
+        <td>{{line.totaldays}}</td>
+        <td>{{line.total}}</td>
+        <td>{{line.gstvalue}}</td>
+        <td>{{line.nettotal}}</td>
+        </tr>
+    {% endfor %}
+</table>
+<button class="button" ><a class="active" href="./hotelbooking">Back</a></button>
+
+</body>
+</html>

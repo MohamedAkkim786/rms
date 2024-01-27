@@ -1,0 +1,444 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>BAR</title>
+    <style>
+      /* BILLING STYLE SHEET */
+
+* {
+  margin: 0%;
+  padding: 0%;
+
+}
+
+body {
+  background: url(/static/images/hotel.jpg) no-repeat ;height:950px;
+  font-family: 'Times New Roman', Times, serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+table{
+  border-collapse: collapse;
+
+}
+
+th,
+td {
+  padding: 10px;
+  margin-left: 10%;
+  border-collapse: collapse;
+
+}
+
+th {
+  background-color: burlywood;
+}
+
+input {
+  padding: 6px
+}
+
+h1 {
+  color: red;
+}
+
+input[type=text] {
+  border-radius: 5px;
+}
+
+input[type=submit]:hover {
+  background-color: burlywood;
+  border: none;
+  border-radius: 10px;
+}
+
+input[type=reset]:hover {
+  background-color: burlywood;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: #ffe6a7;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+h1 {
+  margin-top: 50px;
+  color: tomato;
+  font-size: 60px;
+
+}
+
+.lpay {
+  margin-left: 30%;
+}
+
+select {
+  width: 90%;
+  height: 30px;
+  font-weight: bolder;
+}
+.tol{
+  color: black;
+  font-weight: 900;
+  font-size: larger;
+  background-color: burlywood;
+}
+
+@media screen and (max-width: 1160px) {
+
+  
+  
+    .Without_Responsive{
+      display: none;
+    }
+    .Responsive_table{
+      display: block;
+    }
+    
+  
+    .tableFixHead {
+      overflow-y: auto; 
+      height: auto; 
+    }
+    .tableFixHead tr td:nth-child(1) {
+      position: sticky;
+      left: 0;
+      border: solid 2px  #bd692d;
+      background-color:#f7c469;
+      color : rgb(87, 57, 18);
+      z-index: 1;
+      
+    }
+    .tableFixHead table {
+      border-collapse: separate; 
+      border-spacing: 0;
+      width: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 30px;
+    }
+  
+  
+    .Responsive_table h1{
+      margin-top: 150px;
+    }
+    .Responsive_table tr:nth-child(1) td {
+         text-align: center;
+         background-color:#f7c469;
+         color : rgb(87, 57, 18);
+    }
+    table , tr ,td{
+      border: solid 2px  #bd692d;
+    }
+    input{
+      height: 15px;
+      width: 80px;
+    }
+    .header2{
+      padding-top:10px;
+        font-size:40px;
+         color:#fff;
+       margin-top: 20px;
+       margin-bottom: 0;
+  
+  }
+    .d2{
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .d2 td:nth-child(1)
+  {
+         font-size: 15px;
+         background-color:#f7c469;
+         color : rgb(87, 57, 18);
+         padding: 10px;
+         font-weight:bolder;
+     
+  }
+  .d2 td:nth-child(2) input{
+    width: 100px;
+  
+  }
+  .Responsive_table input  {
+    width: 100px !important;
+  }
+  
+  th,
+  td {
+    padding: 3px;
+    margin-left: 10%;
+    border-collapse: collapse;
+  
+  }
+
+}
+    </style>
+   
+   <script>
+     function foodprice(){
+   if(document.getElementById("foodlist").value == "Curd"){
+     document.getElementById("selectNumber").value = 30;
+   }
+   else if(document.getElementById("foodlist").value == "Lemon"){
+    document.getElementById("selectNumber").value = 50;
+   }
+   else if(document.getElementById("foodlist").value == "Briyani"){
+    document.getElementById("selectNumber").value = 80;
+   }
+   else if(document.getElementById("foodlist").value == "Diner Grill"){
+    document.getElementById("selectNumber").value = 180;
+   }
+   else if(document.getElementById("foodlist").value == "Unique Meals"){
+    document.getElementById("selectNumber").value = 70;
+   }
+   else if(document.getElementById("foodlist").value == "Pizza Posse"){
+    document.getElementById("selectNumber").value = 90;
+   }
+   else{
+    document.getElementById("selectNumber").value = 0;
+   }
+
+}
+function foodprice1(){
+   if(document.getElementById("foodlist1").value == "Curd"){
+     document.getElementById("selectNumber1").value = 30;
+   }
+   else if(document.getElementById("foodlist1").value == "Lemon"){
+    document.getElementById("selectNumber1").value = 50;
+   }
+   else if(document.getElementById("foodlist1").value == "Briyani"){
+    document.getElementById("selectNumber1").value = 80;
+   }
+   else if(document.getElementById("foodlist1").value == "Diner Grill"){
+    document.getElementById("selectNumber1").value = 180;
+   }
+   else if(document.getElementById("foodlist1").value == "Unique Meals"){
+    document.getElementById("selectNumber1").value = 70;
+   }
+   else if(document.getElementById("foodlist1").value == "Pizza Posse"){
+    document.getElementById("selectNumber1").value = 90;
+   }
+   else{
+    document.getElementById("selectNumber1").value = 0;
+   }
+
+}
+
+
+
+
+function myFunction(){
+   document.getElementById("total").value = (document.getElementById("quantity").value)*(document.getElementById("selectNumber").value); 
+  
+   document.getElementById('finalamt').value = Number(document.getElementById('total').value)+Number(document.getElementById('total1').value);
+   
+   }
+
+function myFunction1(){
+   document.getElementById("total1").value = (document.getElementById("quantity1").value)*(document.getElementById("selectNumber1").value); 
+
+ 
+   document.getElementById('finalamt').value = Number(document.getElementById('total').value)+Number(document.getElementById('total1').value);
+
+
+}
+
+
+
+function gst() {
+   var arr = Number(document.getElementById('finalamt').value);
+   var gst = document.getElementById('gstval').value;
+   if (gst == 5){
+      var tot = arr + arr*5/100;
+   }
+   else if(gst == 12){
+      var tot = arr + arr*12/100;
+   }
+   else if(gst == 18){
+      var tot = arr + arr*18/100;
+   }
+   else{
+      document.getElementById('gstval').value = 0;
+   }
+   document.getElementById('nettol').value =Math.floor(tot);
+ }
+   
+   </script>
+  
+
+</head>
+
+  <body >
+
+    <form action="#" method="POST">
+      {% csrf_token %}
+
+      <center><h1>Bill Details</h1>
+
+
+
+      <table border="1px" cellpadding="12" class="t1">
+        <tr>
+          <th rowspan="2">BILL NO</th>
+          <th style="width: 180px;">BAR ITEMS</th>
+          <th>QUANTITY</th>
+          <th>PRICE</th>
+          <th>TOTAL</th>
+        </tr>
+        <tr>
+         
+          <td><select name="foodlist1" id="foodlist" onchange="foodprice()" required>
+            <option value="" style="text-align: center;">--Stocks--</option>
+            <option value="Curd">Baileys Irish Cream</option>
+            <option value="Lemon">Aperol</option>
+            <option value="Briyani">Hlibny Dar Vodka</option>
+            <option value="Diner Grill">Kingfisher</option>
+            <option value="Unique Meals">Jack Daniel's</option>
+            <option value="Pizza Posse">Royal Stag</option>
+          </select></td>
+          <td><input type="text" name="quantity1" id="quantity"  oninput="myFunction()" required/></td>
+          <td><input type="text" name="selectNumber1" id="selectNumber" value="" required /></td>
+          <td><input type="text" name="total1" id="total" required/></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="bill_no" id="bill_no" required/></td>
+          <td><select name="foodlist" id="foodlist1" onchange="foodprice1()" required>
+            <option value="" style="text-align: center;">--Side Dishes--</option>
+            <option value="Curd">Fresh green beans  Fruit mix</option>
+            <option value="Lemon">Sautéed zucchini</option>
+            <option value="Briyani">Fruit mix</option>
+            <option value="Diner Grill">Chicken burji</option>
+            <option value="Unique Meals">Chinthamani chicken</option>
+            <option value="Pizza Posse">French fries</option>
+          </select></td>
+          <td><input type="text" name="quantity" id="quantity1"  oninput="myFunction1()" required/></td>
+          <td><input type="text" name="selectNumber" id="selectNumber1" required/></td>
+          <td><input type="text" name="total" id="total1"  required/></td>
+        </tr>
+        <tr>
+          
+        <tr>
+          <td colspan="4" align="center" class="tol" > Total</td>
+          <td><input type="number" name="finalamt" id="finalamt"></td>
+        </tr>
+      </table>
+    </center>
+    
+      <br />
+     
+      <br />
+
+      <div class="lpay">
+        <table border="10px">
+          <tr>
+            <th><label for="" name="gst" id="gst">GST</label></th>
+            <td><select name="gstval" id="gstval" onchange="gst()" required>
+              <option value="">--Select--</option>
+              <option value=5>5%</option>
+              <option value=12>12%</option>
+              <option value=18>18%</option>
+            </select></td>
+          </tr>
+          <tr>
+            <th>
+              <label for="" name="net" id="net" class="fname"
+                >NET TOTAL</label
+              >
+            </th>
+            <td><input type="text" id="nettol" name="nettol" required/></td>
+          </tr>
+          <tr>
+            <th><label for="" name="pay" id="pay">MODE OF PAYMENT</label></th>
+            <td>
+              <select name="payment" id="payment" required>
+                <option value="">--Select--</option>
+                <option value="CASH">CASH</option>
+                <option value="CARD">CARD</option>
+                <option value="UPI">UPI</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+    
+
+      <br />
+      <center>
+        <input type="submit" class="btn" value="Submit" />
+        <input type="reset" class="btn" value="Reset" />
+      </center>
+    </form>
+    
+  </body>
+</html>

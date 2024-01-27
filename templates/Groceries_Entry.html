@@ -1,0 +1,272 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries Entry</title>
+
+    <link rel="stylesheet" href="/static/style/styles_GE.css" />
+    <style>
+        body {
+            background: url(/static/images/hotel.jpg);
+            
+
+        }
+    </style>
+</head>
+
+<body>
+<form action="#" method="POST" >
+    {% csrf_token %}
+    <table border="2" class="d1" id="date">
+        <th>
+            DATE
+        </th>
+        <td>
+            <input type="date" name="date1" id="date1" required>
+        </td>
+    </table>
+    <center>
+    <div class="Without_Responsive">
+        
+            <h1 class="header">Groceries Entry</h1>
+            <div>
+                <table border="3" class="d1">
+                    <tr>
+                        <th>
+                            S. NO
+                        </th>
+                        <th>
+                            NATURE OF GROCERIES
+                        </th>
+                        <th>
+                            QUANTITY
+                        </th>
+                        <th>
+                            PRICE
+                        </th>
+
+                        <th>
+                            TOTAL
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            1.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname1" id="groceryname1" required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity1" id="quantity1" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price1" id="price1"  oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total1" id="total1" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname2" id="groceryname2"  required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity2" id="quantity2" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price2" id="price2" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total2" id="total2" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname3" id="groceryname3" required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity3" id="quantity3" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price3" id="price3" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total3" id="total3" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname4" id="groceryname4" required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity4" id="quantity4" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price4" id="price4" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total4" id="total4" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            5.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname5" id="groceryname5" required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity5" id="quantity5" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price5" id="price5" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total5" id="total5" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            6.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname6" id="groceryname6" required>
+                        </td>
+                        <td>
+                            <input type="number" name="quantity6" id="quantity6" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="price6" id="price6" oninput="findsubtotal()" required>
+                        </td>
+                        <td>
+                            <input type="number" name="total6" id="total6" class="total" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            7.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname7" id="groceryname7">
+                        </td>
+                        <td>
+                            <input type="number" name="quantity7" id="quantity7" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="price7" id="price7" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="total7" id="total7" class="total">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            8.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname8" id="groceryname8">
+                        </td>
+                        <td>
+                            <input type="number" name="quantity8" id="quantity8" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="price8" id="price8" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="total8" id="total8" class="total">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            9.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname9" id="groceryname9">
+                        </td>
+                        <td>
+                            <input type="number" name="quantity9" id="quantity9" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="price9" id="price9" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="total9" id="total9" class="total">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            10.
+                        </td>
+                        <td>
+                            <input type="text" name="groceryname" id="groceryname10">
+                        </td>
+                        <td>
+                            <input type="number" name="quantity" id="quantity10" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="price" id="price10" oninput="findsubtotal()">
+                        </td>
+                        <td>
+                            <input type="number" name="total" id="total10" class="total">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+    </div>
+    </center>
+        <center>
+        <div>
+        <h1 class="header2">Grocery Tax</h1>
+        <table border="2" class="d2">
+            <tr>
+                <td>
+                    SUB TOTAL
+                </td>
+                <td>
+                    <input type="number" name="subtotal" id="subtotal"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    GST
+                </td>
+                <td><select name="gstval" id="gstval" onchange="gst()" required>
+                    <option value="">--Select--</option>
+                    <option value=5>5%</option>
+                    <option value=12>12%</option>
+                    <option value=18>18%</option>
+                  </select></td>
+            </tr>
+            <tr>
+                <td>
+                    GRAND TOTAL
+                </td>
+                <td>
+                    <input type="number" name="grandtotal" id="grandtotal" required>
+                </td>
+            </tr>
+        </table>
+        <button class="button" id="submitbutton" type="submit">Submit</button>
+        <button class="button" id="resetbutton" type="reset">Reset</button>
+        </center>
+    </div>
+    </form>
+    
+   <script src="/static/javascript/accounts.js"></script>
+</body>
+
+</html>

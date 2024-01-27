@@ -1,0 +1,189 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function salary(){
+            var workers_name=document.getElementById("workers_name").value;
+            var date=document.getElementById("date").value;
+            var designation=document.getElementById("designation").value;
+            var basic_pay=document.getElementById("basic_pay").value;
+            var DA=document.getElementById("DA").value;
+            var CCA=document.getElementById("CCA").value;
+            var add=(basic_pay*1)+(DA*1)+(CCA*1)          
+            document.getElementById("total").value=(add)        
+        }
+
+    </script>
+</head>
+<body>
+<style>
+       body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        color: white;
+        
+      }
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+        .btn{
+            border-radius: 5px;
+            border:none;
+            width: 100px;
+            height: 30px;
+            margin-top: 20px;
+            background-color: rgb(227, 210, 81);
+        }
+        .nworkers{
+            border-radius: 5px;
+            border: 2px solid black;
+            width: 50%;
+            height: 27px;
+        }
+    </style>
+    <h3 align="center">WORKERS SALARY FORM</h3>
+    <form>
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>NAME OF THE WORKERS</label>
+                    </td>
+                    <td>
+                        <input type="text" name="workers_name" required id="workers_name" class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DATE</label>
+                    </td>
+                    <td>
+                        <input type="date" name="date" id="date" required  class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DESIGNATION</label>
+                    </td>
+                    <td>
+                        <input type="text" name="designation" required id="designation" class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>WORK TYPE</label>
+                    </td>
+                    <td>
+                    <input type="checkbox" name="Full time"><span>Full time</span>
+                    <input type="checkbox" name="Part time"><span>Part time</span>
+                    <input type="checkbox" name="Contract"><span>Contract</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>BASIC PAY</label>
+                    </td>
+                    <td>
+                        <input type="number" name="basic_pay" required id="basic_pay" class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DA</label>
+                    </td>
+                    <td>
+                        <input type="number" name="DA" id="DA" required  class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CCA</label>
+                    </td>
+                    <td>
+                        <input type="number" name="CCA"  id="CCA" required class="nworkers">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>TOTAL SALARY</label>
+                    </td>
+                    <td>
+                        <input type="text" name="total" id="total"  required class="nworkers">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    <br>
+    <br>
+    <center>
+    <input class="btn" type="button" value="submit" onclick="salary();">
+    <input class="btn" type="reset" value="reset">
+    </center>
+    </form>
+</body>
+</html>

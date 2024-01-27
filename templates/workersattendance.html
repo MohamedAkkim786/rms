@@ -1,0 +1,179 @@
+{% include "navbar.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function attendance(){
+            var workers_name=document.getElementById("workers_name").value;
+            var date=document.getElementById("date").value;
+            var time=document.getElementById("time").value;
+            var reason_for_leave=document.getElementById("reason_for_leave").value;
+            var leave=document.getElementById("leave").value;
+        }
+    </script>
+</head>
+<body>
+<style>
+        body{
+        background:url(/static/images/hotel.jpg) no-repeat ;height:950px;
+        background-size: cover ;
+        color: white;
+        
+      }
+      body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+        .btn{
+            border-radius: 5px;
+            border:none;
+            width: 100px;
+            height: 30px;
+            margin-top: 20px;
+            background-color: rgb(227, 210, 81);
+        }
+        .nworkers{
+            border-radius: 5px;
+            border: 2px solid black;
+            width: 50%;
+            height: 27px;
+        }
+    </style>
+    <h3 align="center">WORKERS ATTENDANCE FORM</h3>
+    <form>
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td>
+                        <label>NAME OF THE WORKERS</label>
+                    </td>
+                    <td>
+                        <input type="text" name="workers_name" id="workers_name" class="nworkers" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DATE</label>
+                    </td>
+                    <td>
+                        <input type="date" name="date" id="date" class="nworkers" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>TIME</label>
+                    </td>
+                    <td>
+                        <input type="time" name="time" id="time" class="nworkers" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>WORK TYPE</label>
+                    </td>
+                    <td>
+                    <input type="checkbox" name="Full time"><span>Full time</span>
+                    <input type="checkbox" name="Part time"><span>Part time</span>
+                    <input type="checkbox" name="Contract"><span>Contract</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>APPREANCE</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="present"><span>present</span>
+                        <input type="radio" name="present"><span>absent</span>
+                        <input type="checkbox" name="present"><span>leave letter</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>REASON FOR LEAVE</label>
+                    </td>
+                    <td>
+                        <textarea class="leave" cols="10" rows="5" required name="reason_for_leave" id="reason_for_leave" class="nworkers"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>NO.OF DAYS LEAVE</label>
+                    </td>
+                    <td>
+                        <input type="number" name="leave" id="leave" required class="nworkers">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <br>
+    <br>
+    <br>
+    <center>
+    <input class="btn" type="submit" value="submit" onclick="attendance();">
+    <input class="btn" type="reset" value="reset">
+    </center>
+</body>
+</html>
